@@ -1,21 +1,21 @@
-#include <iostream>
-#include <string>
+// #include <iostream>
+// #include <string>
 #ifndef PASSWORD_MANAGER_H
 #define PASSWORD_MANAGER_H
 // PasswordManager declaration class
-using namespace std;
+using std::string;
 class PasswordManager {
     private:
-        string username;
-        string encryptedPassword; 
-        string encrypt(string);   
+        std::string username;
+        std::string encryptedPassword; 
+        std::string encrypt(string);   
         bool meetsCriteria(string);
     public:
         void setUsername(string);
         void setEncryptedPassword(string);
-        string getUsername() const;
-        string getEncryptedPassword() const;
+        std::string getUsername() const {return username;}
+        std::string getEncryptedPassword() const {return encryptedPassword;}
         bool setNewPassword(string);
         bool authenticate(string);
-}
+};
 #endif

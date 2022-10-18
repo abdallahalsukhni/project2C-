@@ -1,17 +1,8 @@
 #include <iostream>
-#include <string>
-using namespace std;
+// #include <string>
 #include "PasswordManager.h"
-
-// returns current username
-string PasswordManager::getUsername() {
-    return username;
-}
-
-// returns current encrypted password
-string PasswordManager::getEncryptedPassword() {
-    return encryptedPassword;
-}
+using namespace std;
+// using std::string;
 
 // sets password to a new encrypted password
 void PasswordManager::setEncryptedPassword(string newEncryptedPassword) {
@@ -37,7 +28,7 @@ bool PasswordManager::authenticate(string password) {
 }
 
 // private method, not sure if this is considered private
-string PasswordManager::encrypt(string password) {
+std::string PasswordManager::encrypt(string password) {
     int amountToLoop = password.length();
     string newString = "";
     for(int spot = 0; spot < amountToLoop; spot++) {
